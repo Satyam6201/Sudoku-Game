@@ -1,0 +1,108 @@
+/* 💻 General Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #34495e, #1abc9c);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 📦 Game Container */
+.game-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  width: 420px;
+}
+
+/* 🎯 Controls */
+.controls {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.controls select, .controls button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.controls button {
+  background: #1abc9c;
+  color: white;
+}
+.controls button:hover {
+  background: #16a085;
+}
+
+/* ⏱ Timer */
+#timer {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 🧩 Sudoku Grid */
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 2px;
+  margin: 15px auto;
+  width: 360px;
+  height: 360px;
+}
+.sudoku-grid input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  outline: none;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+.sudoku-grid input:focus {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+/* Bold lines for Sudoku boxes */
+.sudoku-grid input:nth-child(3n+1) {
+  border-left: 3px solid #2c3e50;
+}
+.sudoku-grid input:nth-child(-n+9) {
+  border-top: 3px solid #2c3e50;
+}
+.sudoku-grid input:nth-child(9n) {
+  border-right: 3px solid #2c3e50;
+}
+.sudoku-grid input:nth-last-child(-n+9) {
+  border-bottom: 3px solid #2c3e50;
+}
+
+/* ✅ Messages */
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.success {
+  color: #2ecc71;
+}
+.error {
+  color: #e74c3c;
+}
+.hint {
+  color: #3498db;
+}

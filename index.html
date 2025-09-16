@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Sudoku Puzzle Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🧩 Advanced Sudoku</h1>
+
+    <div class="controls">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="newGame">New Game</button>
+      <button id="checkGame">Check</button>
+      <button id="solveGame">Solve</button>
+      <button id="hintGame">Hint (<span id="hintCount">3</span> left)</button>
+      <span id="timer">00:00</span>
+    </div>
+
+    <div class="sudoku-grid" id="sudokuGrid"></div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script src="App.js"></script>
+</body>
+</html>
