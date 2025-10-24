@@ -3,21 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧩 Sudoku Master</title>
+  <title>Sudoku Puzzle Game</title>
   <link rel="icon" href="image.webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="game-container">
-    <h1>🧩 Sudoku Master</h1>
-
-    <div class="top-bar">
-      <div class="theme-toggle" id="themeToggle">🌞</div>
-      <div class="scoreboard">
-        <span>⏱ <span id="timer">00:00</span></span> |
-        <span>🏆 Best: <span id="bestTime">--:--</span></span>
-      </div>
-    </div>
+    <h1>🧩Sudoku</h1>
 
     <div class="controls">
       <label for="difficulty">Difficulty:</label>
@@ -27,10 +19,11 @@
         <option value="hard">Hard</option>
       </select>
 
-      <button id="newGame">🆕 New</button>
-      <button id="checkGame">✅ Check</button>
-      <button id="solveGame">💡 Solve</button>
-      <button id="hintGame">✨ Hint (<span id="hintCount">3</span>)</button>
+      <button id="newGame">New Game</button>
+      <button id="checkGame">Check</button>
+      <button id="solveGame">Solve</button>
+      <button id="hintGame">Hint (<span id="hintCount">3</span> left)</button>
+      <span id="timer">00:00</span>
     </div>
 
     <div class="sudoku-grid" id="sudokuGrid"></div>
@@ -38,12 +31,6 @@
     <div class="message" id="message"></div>
   </div>
 
-  <canvas id="confetti"></canvas>
-
-  <audio id="clickSound" src="sounds/click.mp3"></audio>
-  <audio id="successSound" src="sounds/success.mp3"></audio>
-  <audio id="errorSound" src="sounds/error.mp3"></audio>
-
-  <script src="app.js"></script>
+  <script src="App.js"></script>
 </body>
 </html>
