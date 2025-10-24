@@ -1,7 +1,7 @@
 /* 💻 General Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #34495e, #1abc9c);
+  background: linear-gradient(135deg, #2c3e50, #16a085);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -9,18 +9,20 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 10px;
+  transition: background 0.5s;
 }
 
 /* 📦 Game Container */
 .game-container {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0,0,0,0.5);
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   box-sizing: border-box;
+  transition: background 0.5s;
 }
 
 /* 🎯 Controls */
@@ -40,12 +42,10 @@ body {
   cursor: pointer;
   transition: 0.3s;
   font-size: 14px;
-}
-.controls button {
   background: #1abc9c;
   color: white;
 }
-.controls button:hover {
+.controls button:hover, .controls select:hover {
   background: #16a085;
 }
 
@@ -53,6 +53,7 @@ body {
 #timer {
   font-weight: bold;
   font-size: 14px;
+  margin-left: 10px;
 }
 
 /* 🧩 Sudoku Grid */
@@ -63,8 +64,11 @@ body {
   gap: 2px;
   margin: 15px auto;
   width: 100%;
-  max-width: 360px;
+  max-width: 450px;
   aspect-ratio: 1;
+  border: 3px solid #16a085;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
 }
 .sudoku-grid input {
   width: 100%;
@@ -81,63 +85,47 @@ body {
 .sudoku-grid input:focus {
   background: #f1c40f;
   color: #2c3e50;
+  box-shadow: 0 0 8px #f1c40f;
 }
 
 /* Bold lines for Sudoku boxes */
-.sudoku-grid input:nth-child(3n+1) {
-  border-left: 3px solid #2c3e50;
-}
-.sudoku-grid input:nth-child(-n+9) {
-  border-top: 3px solid #2c3e50;
-}
-.sudoku-grid input:nth-child(9n) {
-  border-right: 3px solid #2c3e50;
-}
-.sudoku-grid input:nth-last-child(-n+9) {
-  border-bottom: 3px solid #2c3e50;
-}
+.sudoku-grid input:nth-child(3n+1) { border-left: 3px solid #2c3e50; }
+.sudoku-grid input:nth-child(-n+9) { border-top: 3px solid #2c3e50; }
+.sudoku-grid input:nth-child(9n) { border-right: 3px solid #2c3e50; }
+.sudoku-grid input:nth-last-child(-n+9) { border-bottom: 3px solid #2c3e50; }
 
 /* ✅ Messages */
 .message {
   margin-top: 10px;
   font-weight: bold;
+  font-size: 16px;
 }
-.success {
-  color: #2ecc71;
+.success { color: #2ecc71; animation: glow 1s infinite alternate; }
+.error { color: #e74c3c; }
+.hint { color: #3498db; }
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #1b1b2f, #0f3460);
 }
-.error {
-  color: #e74c3c;
+body.dark .game-container {
+  background: rgba(0,0,0,0.7);
 }
-.hint {
-  color: #3498db;
+
+/* Confetti Animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #2ecc71; }
+  100% { text-shadow: 0 0 20px #2ecc71; }
 }
 
 /* 📱 Responsive Design */
 @media (max-width: 500px) {
-  .controls select, .controls button {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .sudoku-grid input {
-    font-size: 14px;
-  }
-
-  #timer {
-    font-size: 12px;
-  }
+  .controls select, .controls button { font-size: 12px; padding: 6px 10px; }
+  .sudoku-grid input { font-size: 14px; }
+  #timer { font-size: 12px; }
 }
-
 @media (max-width: 360px) {
-  .game-container {
-    padding: 15px;
-  }
-
-  .sudoku-grid {
-    gap: 1px;
-  }
-
-  .sudoku-grid input {
-    font-size: 12px;
-  }
+  .game-container { padding: 15px; }
+  .sudoku-grid { gap: 1px; }
+  .sudoku-grid input { font-size: 12px; }
 }
